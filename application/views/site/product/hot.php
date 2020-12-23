@@ -10,6 +10,7 @@
 		    <h3 class="panel-title">Sản phẩm bán chạy</h3>
 		  </div>
 		  <div class="panel-body">
+		  <div class="row">
 		  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearpadding">
 		  		<?php foreach ($product_list as $value) {
 		  			$name = covert_vi_to_en($value->name);
@@ -33,6 +34,8 @@
 					</div>
 				<?php } ?>	
 		  	</div>
+		  </div>
+		  	
 			 <?php echo $this->pagination->create_links(); ?>
 		  </div>
 		</div>

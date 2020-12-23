@@ -10,6 +10,7 @@
 		    <h3 class="panel-title"><?php echo $catalog_p->name; ?></h3>
 		  </div>
 		  <div class="panel-body">
+		  <div class="row">
 		  <?php if ($total > 0) { ?>
 		  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearpadding">
 		  		<?php foreach ($product_list as $value) {
@@ -40,6 +41,9 @@
 		  <?php	} ?>
 		  	
 		  </div>
+		  
+		  </div>
+		  
 		</div>
 		
 	</div>
