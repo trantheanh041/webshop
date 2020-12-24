@@ -30,9 +30,9 @@ class Admin extends MY_Controller {
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger" role="alert" style="padding:5px;border-bottom:0px;">', '</div>');
 
 		if ($this->input->post()) {
-			$this->form_validation->set_rules('name','Họ tên','required');
-			$this->form_validation->set_rules('email','Tên đăng nhập','valid_email|required');
-			$this->form_validation->set_rules('password','Mật khẩu','required');
+			$this->form_validation->set_rules('name','Họ tên','required|max_length[30]');
+			$this->form_validation->set_rules('email','Tên đăng nhập','required|valid_email|callback_check_email');
+			$this->form_validation->set_rules('password','Mật khẩu','required|min_length[6]|max_length[12]');
 			$this->form_validation->set_rules('re_password','Mật khẩu nhập lại','matches[password]');
 			$this->form_validation->set_rules('level','Phân quyền','required');
 			if ($this->form_validation->run()) {
