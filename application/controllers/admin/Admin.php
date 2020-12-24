@@ -68,12 +68,12 @@ class Admin extends MY_Controller {
 		}
 		//$this->data['admin'] = $admin;
 		if ($this->input->post()) {
-			$this->form_validation->set_rules('name','Họ tên','required');
+			$this->form_validation->set_rules('name','Họ tên','required|max_length[30]');
 			$this->form_validation->set_rules('email','Tên đăng nhập','valid_email|required');
 			$this->form_validation->set_rules('level','Phân quyền','required');
 			$password = $this->input->post('password');
 			if ($password!='') {
-				$this->form_validation->set_rules('password','Mật khẩu','required');
+				$this->form_validation->set_rules('password','Mật khẩu','required|min_length[6]|max_length[12]');
 				$this->form_validation->set_rules('re_password','Mật khẩu nhập lại','matches[password]');
 			}			
 			if ($this->form_validation->run()) {				
